@@ -22,7 +22,7 @@ This is a widget for followers and Sub goals for Tiktok on OBS. Currently in pro
 1. main.py currently is commented out. The top comments control the main GUI. The bottom comments control the API.
 2. Config.py has all of the configurables. This includes username, text, etc. If the API portion of the code is non functioning, it is most likely because the user selected in the config file is not online. Please change it to a user currently online, and it should work.
 3. package/app.py contains the gui. It is able to be updated through updateUI(num), incrementing the number of followers by num amount.
-4. package\window\notifications.py contains the api. This takes in live information froma single user's Live and tells you how many followers have followed that stream, as well as who followed individually. Also handles disconnects, etc.
+4. package/window/notifications.py contains the api. This takes in live information froma single user's Live and tells you how many followers have followed that stream, as well as who followed individually. Also handles disconnects, etc.
 
 ## Usage
 
