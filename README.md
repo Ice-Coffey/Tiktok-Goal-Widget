@@ -26,9 +26,14 @@ This is a widget for followers and Sub goals for Tiktok on OBS. Currently in pro
 
 ## Usage
 
+1. Change what you need in the Config.py file
+2. run this line in a terminal in the directory of the file.
 ``` python
 python main.py
 ```
+3. Select Window Source on OBS
+4. Chroma Key out the black and crop out the top of the window
+5. Add it to your stream!
 
 ## Change log
 
