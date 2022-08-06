@@ -11,7 +11,7 @@ This is a widget for followers and Sub goals for Tiktok on OBS. Currently in pro
 
 
 ## Install
-1. Download a code editor like [VSCode] (https://code.visualstudio.com/Download)
+1. Download a code editor like [VSCode](https://code.visualstudio.com/Download)
 2. Install [python](https://www.python.org/downloads/) onto your machine
 3. Clone this repository or download and extract [this ZIP file](https://github.com/Ice-Coffey/Tiktok-Goal-Widget/archive/refs/heads/main.zip)
 4. Open a console/terminal in the root directory of the project. There should be a terminal tab in vs code if you can't find it.
