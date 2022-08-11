@@ -6,10 +6,16 @@ from PyQt5 import QtCore, QtGui
 from PyQt5.QtGui import * 
 from PyQt5.QtCore import * 
 import sys
-from package.window import notifications
 from config import *
-  
-  
+from package.window.notifications import getDiamonds, getGifts, getLikes, getShares, getSubscribers, getFollowers, runAPI
+
+class CustThread(QThread):
+    def __init__(self):
+        super().__init__()
+    
+    def run(self):
+        runAPI()
+
 class Window(QMainWindow):
   
     def __init__(self):
@@ -30,11 +36,21 @@ class Window(QMainWindow):
 
         # showing all the widgets
         self.show()
+
+        # starting the thread
+        self.thread = CustThread()
+        self.thread.start()
+
+        self.timer = QtCore.QTimer(self)
+        self.timer.setInterval(self.configuration.update_interval*1000)
+        self.timer.timeout.connect(self.updateUI)
+        self.timer.start()
         
     #This method updates the UI by increasing current follower count by num
-    def updateUI(self, num):
-        self.current +=num
-        self.goal.setText(str(self.current)+ "/" +str(self.maxGoal) + self.configuration.goal_unit)
+    def updateUI(self):
+        self.current = eval(self.configuration.event_tracked[2])
+        print(self.current)
+        self.goal.setText(str(self.current)+ "/" +str(self.maxGoal) + " " + self.configuration.goal_unit)
         self.bar1.setValue(self.maxPercent(self.current,self.maxGoal))
         self.show()
 
@@ -79,8 +95,8 @@ class Window(QMainWindow):
         self.goal.setAlignment(Qt.AlignCenter)
         self.goal.setGeometry(200, 130, 200, 30)
         self.goal.setStyleSheet("QLabel { color : "+self.configuration.goal_text_color+"; }")
-  
-  
+
+
 def run():
     app = QApplication(sys.argv)
 
@@ -88,8 +104,9 @@ def run():
     window.setWindowTitle(window.configuration.goal_name)
     window.setStyleSheet("background-color: "+window.configuration.background_color+";")
     window.show()
-
+    
     sys.exit(app.exec_())
+
 
 if __name__ == '__main__':
     run()
