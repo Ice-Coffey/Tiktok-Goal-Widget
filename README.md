@@ -35,7 +35,7 @@ python main.py
 4. Chroma Key out the black and crop out the top of the window
 5. Add it to your stream!
 
-It should look like this:
+
 ![Screenshot (190)](https://user-images.githubusercontent.com/38543752/184234605-9d1f7fa1-1587-49a9-b099-a03166eba961.png)
 
 ## Important Config Usage
