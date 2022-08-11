@@ -19,13 +19,13 @@ This is a widget for followers and Sub goals for Tiktok on OBS. Currently in pro
 6. Enter `python main.py` to start the application
 
 ## FOR DEVELOPERS
-1. main.py currently is commented out. The top comments control the main GUI. The bottom comments control the API.
+1. Inline comments are provided to explain functions.
 2. Config.py has all of the configurables. This includes username, text, etc. If the API portion of the code is non functioning, it is most likely because the user selected in the config file is not online. Please change it to a user currently online, and it should work.
 3. package/app.py contains the gui. It is able to be updated through updateUI(num), incrementing the number of followers by num amount.
 4. package/window/notifications.py contains the api. This takes in live information froma single user's Live and tells you how many followers have followed that stream, as well as who followed individually. Also handles disconnects, etc.
 
 ## Usage
-
+NOTE: ONLY FUNCTIONS WHEN LIVE. SO YOU MIGHT HAVE TO CONFIGURE THIS USING SOMEONE ELSE'S USERNAME FIRST.
 1. Change what you need in the Config.py file
 2. run this line in a terminal in the directory of the file.
 ``` python
@@ -34,6 +34,33 @@ python main.py
 3. Select Window Source on OBS
 4. Chroma Key out the black and crop out the top of the window
 5. Add it to your stream!
+
+## Important Config Usage
+In Config.py you will find this
+```configuration = {
+    "username": "@DummyUser",
+    "starting_amount": 0,
+    "goal_amount": 1000,
+    "background_color": "#000000",
+    "bar_color": "#EE1D52",
+    "goal_text_color": "#69C9D0",
+    "font": "Arial",
+    "update_interval": 1,
+    "event_tracked": "on_follow",
+    "goal_unit": "Followers",
+    "goal_name": "Follower Goal",
+    "action": "Followed"
+}```
+1. Username will be your username WITH an @ at the beginning
+2. Colors are all in Hex code and start with #
+3. Starting amount must be lower than goal amount and both must be integers
+4. event_tracked must be one of these values: "on_follow", "on_like", "on_share", "on_gift", "on_subscribe", or "on_diamonds".
+      "on_follow" - tracks # of new followers
+      "on_like" - tracks # of likes
+      "on_share" - tracks when a unique person shares
+      "on_gift" - tracks # of gifts
+      "on_subscribe" - tracks when a new person subs
+      "on_diamonds" -  tracks value of gifts in diamonds
 
 ## Change log
 
