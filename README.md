@@ -53,8 +53,13 @@ In Config.py you will find this
     "event_tracked": "on_follow",
     "goal_unit": "Followers",
     "goal_name": "Follower Goal",
-    "action": "Followed"
-}```
+    "action": "Followed",
+    "show_last": True,
+    "intervals_last": 3,
+    "sound_on": True,
+    "sound_path": "test.mp3"
+}
+```
 1. Username will be your username WITH an @ at the beginning
 2. Colors are all in Hex code and start with #
 3. Starting amount must be lower than goal amount and both must be integers
@@ -65,6 +70,10 @@ In Config.py you will find this
       "on_gift" - tracks # of gifts
       "on_subscribe" - tracks when a new person subs
       "on_diamonds" -  tracks value of gifts in diamonds
+5. show_last is if you show a user after doing the event of your choosing. it will show their profile picture and username.
+6. intervals_last is how long the pfp and user is shown after liking, following, etc. If update_interval is 1, and interval_last is 3, then it will be shown for 1*3 = 3 seconds. show_last must be true
+7. sound_on is whether a sound plays when someone likes, follows, etc. show_last must be true
+8. sound_path is the file name of the sound that plays when someone likes, follows, etc. sound_on must be true
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
