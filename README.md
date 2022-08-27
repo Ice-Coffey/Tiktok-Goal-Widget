@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is a widget for followers and Sub goals for Tiktok on OBS. Currently in production and may not function properly.
+This is a widget for followers and Sub goals for Tiktok on OBS. Currently in active development. Please report any issues you find with the software.
 
 
 ## Install
