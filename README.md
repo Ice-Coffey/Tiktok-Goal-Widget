@@ -16,7 +16,7 @@ NOTE: ONLY FUNCTIONS WHEN LIVE. GO LIVE AND THEN START THIS APPLICATION.
 2. Install [python](https://www.python.org/downloads/) onto your machine
 3. Clone this repository or download and extract [this ZIP file](https://github.com/Ice-Coffey/Tiktok-Goal-Widget/archive/refs/heads/main.zip)
 4. Open a console/terminal in the root directory of the project. There should be a terminal tab in vs code if you can't find it.
-5. Enter `pip install -r requirements.txt` to install all dependencies
+5. Enter `pip install -r requirements.txt` to install all dependencies. If that doesn't work, you may need to install pip. [Follow these steps](https://www.geeksforgeeks.org/download-and-install-pip-latest-version/#windows).
 6. Enter `python main.py` to start the application
 
 ## FOR DEVELOPERS
