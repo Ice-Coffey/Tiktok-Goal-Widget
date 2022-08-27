@@ -36,6 +36,35 @@ python main.py
 4. Chroma Key out the black and crop out the top of the window
 5. Add it to your stream!
 
+
+![Screenshot (190)](https://user-images.githubusercontent.com/38543752/184234605-9d1f7fa1-1587-49a9-b099-a03166eba961.png)
+
+## Important Config Usage
+In Config.py you will find this
+```configuration = {
+    "username": "@DummyUser",
+    "starting_amount": 0,
+    "goal_amount": 1000,
+    "background_color": "#000000",
+    "bar_color": "#EE1D52",
+    "goal_text_color": "#69C9D0",
+    "font": "Arial",
+    "update_interval": 1,
+    "event_tracked": "on_follow",
+    "goal_unit": "Followers",
+    "goal_name": "Follower Goal",
+    "action": "Followed"
+}```
+1. Username will be your username WITH an @ at the beginning
+2. Colors are all in Hex code and start with #
+3. Starting amount must be lower than goal amount and both must be integers
+4. event_tracked must be one of these values: "on_follow", "on_like", "on_share", "on_gift", "on_subscribe", or "on_diamonds".
+      "on_follow" - tracks # of new followers
+      "on_like" - tracks # of likes
+      "on_share" - tracks when a unique person shares
+      "on_gift" - tracks # of gifts
+      "on_subscribe" - tracks when a new person subs
+      "on_diamonds" -  tracks value of gifts in diamonds
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
