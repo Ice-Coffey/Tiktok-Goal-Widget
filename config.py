@@ -13,21 +13,29 @@ from argparse import Action
 #event_tracked: requires values of either "on_follow", "on_like", "on_share", "on_gift", "on_subscribe", or "on_diamonds" depending on what you're tracking
 #goal_unit: what you're trying to get (likes, followers, etc), but can be set to something like "degenerates" to be funny
 #goal_name: The name of what you want to achieve, ie. "Like Goal", "Follower Goal", "Degenerate Accumulations"
-#action: what people did. "liked", "followed", etc. Only used in logs, not important for UI. Can ignore.
+#action: what people did. "liked", "followed", etc.
+#show_last: Who was the last person to do the requested action, their profile picture and username, True for yes, False for no
+#intervals_last: How many "update_interval" you want a "show_last" event to last. ie, if update interval is 1, it will show "X User just Followed!" for 3 seconds inf "interval_last" is 3
+#sound_on: True or False, if you wand "Sound_Path" to play when the selected even (Like, Follow, etc) occur
+#sound_path: The file the sound you want played is in. IMPORTANT: Move your sound file inside the package folder, and write the file name here with the file extension (ie. test.mp3)
 
 configuration = {
-    "username": "@DummyUser",
+    "username": "@YOUR_USERNAME_HERE",
     "starting_amount": 0,
-    "goal_amount": 1000,
+    "goal_amount": 50000,
     "background_color": "#000000",
     "bar_color": "#EE1D52",
     "goal_text_color": "#69C9D0",
     "font": "Arial",
     "update_interval": 1,
-    "event_tracked": "on_follow",
-    "goal_unit": "Followers",
-    "goal_name": "Follower Goal",
-    "action": "Followed"
+    "event_tracked": "on_like",
+    "goal_unit": "Likes",
+    "goal_name": "Let's get 50K Likes!",
+    "action": "Liked",
+    "show_last": True,
+    "intervals_last": 3,
+    "sound_on": True,
+    "sound_path": "test.mp3"
 }
 
 
@@ -47,6 +55,10 @@ class Config():
         self.action = configuration["action"]
         self.update_interval = configuration["update_interval"]
         self.event_tracked = self.eventToAction(configuration["event_tracked"])
+        self.show_last = configuration["show_last"]
+        self.intervals_last = configuration["intervals_last"]
+        self.sound_on = configuration["sound_on"]
+        self.sound_path = configuration["sound_path"]
     
     def eventToAction(self, event):
         d = {

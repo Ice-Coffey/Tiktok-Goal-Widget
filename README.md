@@ -7,10 +7,11 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is a widget for followers and Sub goals for Tiktok on OBS. Currently in development and improvements will be made as time goes on.
+This is a widget for followers and Sub goals for Tiktok on OBS. Currently in active development. Please report any issues you find with the software.
 
 
 ## Install
+NOTE: ONLY FUNCTIONS WHEN LIVE. GO LIVE AND THEN START THIS APPLICATION.
 1. Download a code editor like [VSCode](https://code.visualstudio.com/Download)
 2. Install [python](https://www.python.org/downloads/) onto your machine
 3. Clone this repository or download and extract [this ZIP file](https://github.com/Ice-Coffey/Tiktok-Goal-Widget/archive/refs/heads/main.zip)
@@ -19,13 +20,13 @@ This is a widget for followers and Sub goals for Tiktok on OBS. Currently in dev
 6. Enter `python main.py` to start the application
 
 ## FOR DEVELOPERS
-1. Inline comments are provided to explain functions.
-2. Config.py has all of the configurables. This includes username, text, etc. If the API portion of the code is non functioning, it is most likely because the user selected in the config file is not online. Please change it to a user currently online, and it should work.
-3. package/app.py contains the gui. It is able to be updated through updateUI(num), incrementing the number of followers by num amount.
-4. package/window/notifications.py contains the api. This takes in live information froma single user's Live and tells you how many followers have followed that stream, as well as who followed individually. Also handles disconnects, etc.
+NOTE: ONLY FUNCTIONS WHEN LIVE. SO YOU MIGHT HAVE TO CONFIGURE THIS USING SOMEONE ELSE'S USERNAME FIRST.
+1. Config.py has all of the configurables. This includes username, text, etc. If the API portion of the code is non functioning, it is most likely because the user selected in the config file is not online. Please change it to a user currently online, and it should work.
+2. package/app.py contains the gui. It is able to be updated through updateUI(num), incrementing the number of followers by num amount.
+3. package/window/notifications.py contains the api. This takes in live information froma single user's Live and tells you how many followers have followed that stream, as well as who followed individually. Also handles disconnects, etc.
 
 ## Usage
-NOTE: ONLY FUNCTIONS WHEN LIVE. SO YOU MIGHT HAVE TO CONFIGURE THIS USING SOMEONE ELSE'S USERNAME FIRST.
+
 1. Change what you need in the Config.py file
 2. run this line in a terminal in the directory of the file.
 ``` python
@@ -64,7 +65,6 @@ In Config.py you will find this
       "on_gift" - tracks # of gifts
       "on_subscribe" - tracks when a new person subs
       "on_diamonds" -  tracks value of gifts in diamonds
-
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

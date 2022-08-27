@@ -5,3 +5,8 @@ def giftsToMoney(diamonds):
         cents = f"0{cents}"
     dollars = cent_value//100
     return f"${dollars}.{cents}"
+
+def maxPercent(divisor, dividend):
+        if(divisor>dividend):
+            return 100
+        return int(100*divisor/dividend)
